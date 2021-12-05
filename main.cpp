@@ -56,30 +56,30 @@ void road_middle()
      glBegin(GL_QUADS);
 
     glColor3f(1.0,1.0,1.0);
-     glVertex2f(0, divider1 + 9);
-    glVertex2f(0, divider1 +5);
-    glVertex2f(.75, divider1 +5 );
-    glVertex2f(.75, divider1 +9);
+    glVertex2f(3, divider1 + 9);
+    glVertex2f(3, divider1 +5);
+    glVertex2f(3.5, divider1 +5 );
+    glVertex2f(3.5, divider1 +9);
 
-     glVertex2f(0, divider2 + 9);
-    glVertex2f(0, divider2 +5);
-    glVertex2f(.75, divider2 +5 );
-    glVertex2f(.75, divider2 +9);
+     glVertex2f(3, divider2 + 9);
+    glVertex2f(3, divider2 +5);
+    glVertex2f(3.5, divider2 +5 );
+    glVertex2f(3.5, divider2 +9);
 
-      glVertex2f(0, divider3 + 9);
-    glVertex2f(0, divider3 +5);
-    glVertex2f(.75, divider3 +5 );
-    glVertex2f(.75, divider3 +9);
+      glVertex2f(3, divider3 + 9);
+    glVertex2f(3, divider3 +5);
+    glVertex2f(3.5, divider3 +5 );
+    glVertex2f(3.5, divider3 +9);
 
-    glVertex2f(0, divider4 + 9);
-    glVertex2f(0, divider4 +5);
-    glVertex2f(.75, divider4 +5 );
-    glVertex2f(.75, divider4 +9);
+    glVertex2f(3, divider4 + 9);
+    glVertex2f(3, divider4 +5);
+    glVertex2f(3.5, divider4 +5 );
+    glVertex2f(3.5, divider4 +9);
 
-     glVertex2f(0, divider5 + 9);
-    glVertex2f(0, divider5 +5);
-    glVertex2f(.75, divider5 +5 );
-    glVertex2f(.75, divider5 +9);
+     glVertex2f(3, divider5 + 9);
+    glVertex2f(3, divider5 +5);
+    glVertex2f(3.5, divider5 +5 );
+    glVertex2f(3.5, divider5 +9);
 
 
 
@@ -94,7 +94,7 @@ void road_middle()
 
         }
         divider2 = divider2 - 0.05;
-           if (divider2 < 0.5)
+           if (divider2 < +0.5)
         {
         divider2 = 6;
 
@@ -121,32 +121,33 @@ void road_middle()
 
 void road_property()
 {
-        //road
+        ///road
     glPointSize(10.0);
     glBegin(GL_POLYGON);
 
     glColor3f(0.3,0.3,0.3);
-    glVertex2f(-5,10);
-    glVertex2f(-5,-10);
-    glVertex2f(5,-10);
-    glVertex2f(5,10);
+    glVertex2f(-7,10);
+    glVertex2f(-7,-10);
+    glVertex2f(6.9,-10);
+    glVertex2f(6.9,10);
 
 
     glEnd();
 
      glLoadIdentity();
 
-     //road-lane
+     ///road-lane
      glLineWidth(15.0);
     glBegin(GL_LINES);
 
     glColor3f(1.0,1.0,0.0);
 
-    glVertex2f(-4.5,10);
-    glVertex2f(-4.5,-10);
-
-    glVertex2f(4.5,-10);
-    glVertex2f(4.5,10);
+    //left
+    glVertex2f(-6.6,10);
+    glVertex2f(-6.6,-10);
+    //right
+    glVertex2f(6.5,-10);
+    glVertex2f(6.5,10);
 
     glEnd();
     glLoadIdentity();
@@ -161,13 +162,14 @@ void start_game()
 {
     glLoadIdentity();
      //Score Board
-     glTranslatef(5.3,8.6,0.0);
     glBegin(GL_POLYGON);
      glColor3f(0.0, 0.3, 0.1);
-    glVertex2f(0, 0);
-    glVertex2f(0, -3);
-    glVertex2f(4.5, -3 );
-    glVertex2f(4.5, 0);
+
+    glVertex2f(7, 8.6);
+    glVertex2f(7, 5.6);
+    glVertex2f(9.8, 5.6 );
+    glVertex2f(9.8, 8.6);
+
     glEnd();
      glLoadIdentity();
 
@@ -175,6 +177,8 @@ void start_game()
     road_property();
 
     //glTranslatef(0.0,y_positioncar1+0.0,0.0);
+    road_middle();
+    glTranslatef(-5.0,0.0,0.0);
     road_middle();
     ///main_car
    //  glTranslatef(maincar_pos_x+0.0,maincar_pos_y+0.0,0.0);
