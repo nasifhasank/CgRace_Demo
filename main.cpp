@@ -56,30 +56,30 @@ void road_middle()
      glBegin(GL_QUADS);
 
     glColor3f(1.0,1.0,1.0);
-    glVertex2f(3, divider1 + 9);
-    glVertex2f(3, divider1 +5);
-    glVertex2f(3.5, divider1 +5 );
-    glVertex2f(3.5, divider1 +9);
+    glVertex2f(0, divider1 + 9);
+    glVertex2f(0, divider1 +5);
+    glVertex2f(0.5, divider1 +5 );
+    glVertex2f(0.5, divider1 +9);
 
-     glVertex2f(3, divider2 + 9);
-    glVertex2f(3, divider2 +5);
-    glVertex2f(3.5, divider2 +5 );
-    glVertex2f(3.5, divider2 +9);
+     glVertex2f(0, divider2 + 9);
+    glVertex2f(0, divider2 +5);
+    glVertex2f(0.5, divider2 +5 );
+    glVertex2f(0.5, divider2 +9);
 
-      glVertex2f(3, divider3 + 9);
-    glVertex2f(3, divider3 +5);
-    glVertex2f(3.5, divider3 +5 );
-    glVertex2f(3.5, divider3 +9);
+      glVertex2f(0, divider3 + 9);
+    glVertex2f(0, divider3 +5);
+    glVertex2f(0.5, divider3 +5 );
+    glVertex2f(0.5, divider3 +9);
 
-    glVertex2f(3, divider4 + 9);
-    glVertex2f(3, divider4 +5);
-    glVertex2f(3.5, divider4 +5 );
-    glVertex2f(3.5, divider4 +9);
+    glVertex2f(0, divider4 + 9);
+    glVertex2f(0, divider4 +5);
+    glVertex2f(0.5, divider4 +5 );
+    glVertex2f(0.5, divider4 +9);
 
-     glVertex2f(3, divider5 + 9);
-    glVertex2f(3, divider5 +5);
-    glVertex2f(3.5, divider5 +5 );
-    glVertex2f(3.5, divider5 +9);
+     glVertex2f(0, divider5 + 9);
+    glVertex2f(0, divider5 +5);
+    glVertex2f(0.5, divider5 +5 );
+    glVertex2f(0.5, divider5 +9);
 
 
 
@@ -176,10 +176,8 @@ void start_game()
     ///road
     road_property();
 
-    //glTranslatef(0.0,y_positioncar1+0.0,0.0);
     road_middle();
-    glTranslatef(-5.0,0.0,0.0);
-    road_middle();
+
     ///main_car
    //  glTranslatef(maincar_pos_x+0.0,maincar_pos_y+0.0,0.0);
     ///wheel();
@@ -300,17 +298,17 @@ void car_key(int key, int x, int y)
         break;
 
     case GLUT_KEY_LEFT:
-        if (maincar_pos_x >= 1)
+        if (maincar_pos_x >= -2)
         {
-            maincar_pos_x = maincar_pos_x - 5;
+            maincar_pos_x = maincar_pos_x - 1;
 
         }
         break;
 
     case GLUT_KEY_RIGHT:
-        if (maincar_pos_x <= 4)
+        if (maincar_pos_x <= 6)
         {
-            maincar_pos_x = maincar_pos_x + 5;
+            maincar_pos_x = maincar_pos_x + 1 ;
         }
         break;
 
