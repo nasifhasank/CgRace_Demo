@@ -47,9 +47,9 @@ float divider4=-10;
 float divider5=-15;
 
 //opposite_car
-float car1=0;
-float car2=6;
-float car3=-5;
+float car1=-1;
+float car2=20;
+float car3=-8;
 float car4=0;
 
 
@@ -171,6 +171,7 @@ void start_game()
     glVertex2f(7, 8.6);
     glVertex2f(7, 5.6);
     glVertex2f(9.8, 5.6 );
+
     glVertex2f(9.8, 8.6);
 
     glEnd();
@@ -182,7 +183,18 @@ void start_game()
     road_middle();
 
     ///main_car
-   //  glTranslatef(maincar_pos_x+0.0,maincar_pos_y+0.0,0.0);
+
+    glBegin(GL_TRIANGLES);
+    glColor3f(1.0,0.0,1.0);
+    glVertex2f(maincar_pos_x-3,maincar_pos_y-9);
+    glColor3f(1.0,1.0,0.0);
+    glVertex2f(maincar_pos_x-2.25,maincar_pos_y-9.5);
+    glColor3f(0.0,0.22,0.5);
+    glVertex2f(maincar_pos_x-1.5,maincar_pos_y-9);
+
+    glEnd();
+
+
     glBegin(GL_QUADS);
     // front
     glColor3f(0.0,0.0,0.0);
@@ -241,13 +253,13 @@ void start_game()
     glEnd();
      glLoadIdentity();
 
-      car1 = car1 - 0.2;
+      car1 = car1 - 0.12;
          if (car1 < -30)
        {
         car1 = 1;
           }
 
-    ///opposite_car_2 ( blue )
+    ///opposite_car_2 ( yellow )
 
     //wheel();
 
@@ -270,7 +282,7 @@ void start_game()
 
     //car
     glBegin(GL_POLYGON);
-    glColor3f(0.0,0.0,1.0);
+    glColor3f(1.0,1.0,0.0);
     glVertex2f(-2.5,car2 +7);
     glVertex2f(-2.5, car2+4);
     glVertex2f(-1, car2+4);
@@ -279,14 +291,14 @@ void start_game()
     glEnd();
      glLoadIdentity();
 
-     car2 = car2 - 0.08;
+     car2 = car2 - 0.15;
            if (car2 < -30)
         {
         car2 = 7;
 
         }
 
-     ///opposite_car_3  ( cyan )
+     ///opposite_car_3  ( blue )
 
     //wheel();
 
@@ -307,7 +319,7 @@ void start_game()
 
     //car
     glBegin(GL_POLYGON);
-    glColor3f(0.0,1.0,1.0);
+    glColor3f(0.0,0.0,1.0);
 
     glVertex2f(-5.5, car3+10);
     glVertex2f(-5.5,car3 +7);
@@ -324,7 +336,7 @@ void start_game()
 
        }
 
-    ///opposite_car_4 ( yellow )
+    ///opposite_car_4 ( cyan )
     ///wheel();
 
       glBegin(GL_QUADS);
@@ -344,16 +356,16 @@ void start_game()
 
     //car
     glBegin(GL_POLYGON);
-    glColor3f(1.0,1.0,0.0);
+    glColor3f(0.0,1.0,1.0);
     glVertex2f(4, car4 +5);
     glVertex2f(4, car4 +2);
     glVertex2f(5.5,car4 +2);
     glVertex2f(5.5,car4 +5);
 
-     car4 = car4 - 0.15;
+     car4 = car4 - 0.18;
            if (car4 < -30)
         {
-        car4 = 7;
+        car4 = 9;
 
        }
 
