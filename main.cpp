@@ -15,30 +15,11 @@ void init()
    // glClearColor(0.0,0.0,0.0,1.0);
 }
 
+int start=0;
 //main_car_move
 int maincar_pos_x = 0;
 int maincar_pos_y = 0;
 
-void wheel()
-{
-
-       glBegin(GL_QUADS);
-    // front
-    glColor3f(0.0,0.0,0.0);
-    glVertex2f(-3.3,-6.5);
-    glVertex2f(-3.3,-7);
-    glVertex2f(-1.2,-7);
-    glVertex2f(-1.2,-6.5);
-    //back
-     glColor3f(0.0,0.0,0.0);
-    glVertex2f(-3.3,-8.5);
-    glVertex2f(-3.3,-8);
-    glVertex2f(-1.3,-8);
-    glVertex2f(-1.3,-8.5);
-    glEnd();
-
-
-}
 //road_divider
 float divider1=0;
 float divider2=5;
@@ -52,6 +33,23 @@ float car2=20;
 float car3=-8;
 float car4=0;
 
+//obstacle
+float tree1=4;
+float tree2=0;
+float tree3=0;
+float tree4=4;
+float tree5=17;
+float tree6=21;
+float tree7=4;
+float tree8=0;
+float tree9=0;
+float tree10=4;
+float tree11=22;
+float tree12=10;
+
+float box1=0;
+float box2=0;
+float box3=0;
 
 void road_middle()
 {
@@ -164,18 +162,7 @@ void road_property()
 void start_game()
 {
     glLoadIdentity();
-     //Score Board
-    glBegin(GL_POLYGON);
-     glColor3f(0.0, 0.3, 0.1);
 
-    glVertex2f(7, 8.6);
-    glVertex2f(7, 5.6);
-    glVertex2f(9.8, 5.6 );
-
-    glVertex2f(9.8, 8.6);
-
-    glEnd();
-     glLoadIdentity();
 
     ///road
     road_property();
@@ -245,10 +232,10 @@ void start_game()
      //car
     glBegin(GL_POLYGON);
     glColor3f(1.0,0.0,0.0);
-    glVertex2f(1,car1 +14);
-    glVertex2f(1,car1 +11);
-    glVertex2f(2.5,car1 +11);
-    glVertex2f(2.5, car1 +14);
+    glVertex2f(+1,car1 +14);
+    glVertex2f(+1,car1 +11);
+    glVertex2f(+2.5,car1 +11);
+    glVertex2f(+2.5, car1 +14);
 
     glEnd();
      glLoadIdentity();
@@ -372,6 +359,489 @@ void start_game()
     glEnd();
      glLoadIdentity();
 
+     ///tree-1
+
+      glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree1+0 );
+    glVertex2f(-8.5, tree1-1 );
+    glVertex2f(-7.5, tree1-1);
+
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree1+0.15 );
+    glVertex2f(-8.5, tree1-0.65 );
+    glVertex2f(-7.5, tree1-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree1-0.5 );
+    glVertex2f(-8, tree1-1.8 );
+    glEnd();
+
+
+     tree1 = tree1 - 0.18;
+           if (tree1 < -30)
+        {
+        tree1 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-2
+    glTranslatef(-1.2,0,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree2+0 );
+    glVertex2f(-8.5, tree2-1 );
+    glVertex2f(-7.5, tree2-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree2+0.15 );
+    glVertex2f(-8.5, tree2-0.65 );
+    glVertex2f(-7.5, tree2-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree2-0.5 );
+    glVertex2f(-8, tree2-1.8 );
+    glEnd();
+
+
+     tree2 = tree2 - 0.18;
+           if (tree2 < -30)
+        {
+        tree2 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-3
+    glTranslatef(-1,10,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree3+0 );
+    glVertex2f(-8.5, tree3-1 );
+    glVertex2f(-7.5, tree3-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree3+0.15 );
+    glVertex2f(-8.5, tree3-0.65 );
+    glVertex2f(-7.5, tree3-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree3-0.5 );
+    glVertex2f(-8, tree3-1.8 );
+    glEnd();
+
+
+     tree3 = tree3 - 0.18;
+           if (tree3 < -30)
+        {
+        tree3 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-4
+    glTranslatef(-0.5,20,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree4+0 );
+    glVertex2f(-8.5, tree4-1 );
+    glVertex2f(-7.5, tree4-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree4+0.15 );
+    glVertex2f(-8.5, tree4-0.65 );
+    glVertex2f(-7.5, tree4-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree4-0.5 );
+    glVertex2f(-8, tree4-1.8 );
+    glEnd();
+
+
+     tree4 = tree4 - 0.18;
+           if (tree4 < -30)
+        {
+        tree4 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-5
+    glTranslatef(-0.5,2,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree5+0 );
+    glVertex2f(-8.5, tree5-1 );
+    glVertex2f(-7.5, tree5-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree5+0.15 );
+    glVertex2f(-8.5, tree5-0.65 );
+    glVertex2f(-7.5, tree5-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree5-0.5 );
+    glVertex2f(-8, tree5-1.8 );
+    glEnd();
+
+
+     tree5 = tree5 - 0.18;
+           if (tree5 < -30)
+        {
+        tree5 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-6
+    glTranslatef(-1,10,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree6+0 );
+    glVertex2f(-8.5, tree6-1 );
+    glVertex2f(-7.5, tree6-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree6+0.15 );
+    glVertex2f(-8.5, tree6-0.65 );
+    glVertex2f(-7.5, tree6-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree6-0.5 );
+    glVertex2f(-8, tree6-1.8 );
+    glEnd();
+
+
+     tree6 = tree6 - 0.18;
+           if (tree6 < -30)
+        {
+        tree6 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-7
+    glTranslatef(-1,10,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree7+0 );
+    glVertex2f(-8.5, tree7-1 );
+    glVertex2f(-7.5, tree7-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree7+0.15 );
+    glVertex2f(-8.5, tree7-0.65 );
+    glVertex2f(-7.5, tree7-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree7-0.5 );
+    glVertex2f(-8, tree7-1.8 );
+    glEnd();
+
+
+     tree7 = tree7 - 0.18;
+           if (tree7 < -30)
+        {
+        tree7 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-8
+    glTranslatef(+16,10,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree8+0 );
+    glVertex2f(-8.5, tree8-1 );
+    glVertex2f(-7.5, tree8-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree8+0.15 );
+    glVertex2f(-8.5, tree8-0.65 );
+    glVertex2f(-7.5, tree8-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree8-0.5 );
+    glVertex2f(-8, tree8-1.8 );
+    glEnd();
+
+
+     tree8 = tree8 - 0.18;
+           if (tree8 < -30)
+        {
+        tree8 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-9
+    glTranslatef(+16,15,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree9+0 );
+    glVertex2f(-8.5, tree9-1 );
+    glVertex2f(-7.5, tree9-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree9+0.15 );
+    glVertex2f(-8.5, tree9-0.65 );
+    glVertex2f(-7.5, tree9-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree9-0.5 );
+    glVertex2f(-8, tree9-1.8 );
+    glEnd();
+
+
+     tree9 = tree9 - 0.18;
+           if (tree9 < -30)
+        {
+        tree9 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-10
+    glTranslatef(+16.5,0,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree10+0 );
+    glVertex2f(-8.5, tree10-1 );
+    glVertex2f(-7.5, tree10-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree10+0.15 );
+    glVertex2f(-8.5, tree10-0.65 );
+    glVertex2f(-7.5, tree10-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree10-0.5 );
+    glVertex2f(-8, tree10-1.8 );
+    glEnd();
+
+
+     tree10 = tree10 - 0.18;
+           if (tree10 < -30)
+        {
+        tree10 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-11
+    glTranslatef(+16.5,0,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree11+0 );
+    glVertex2f(-8.5, tree11-1 );
+    glVertex2f(-7.5, tree11-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree11+0.15 );
+    glVertex2f(-8.5, tree11-0.65 );
+    glVertex2f(-7.5, tree11-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree11-0.5 );
+    glVertex2f(-8, tree11-1.8 );
+    glEnd();
+
+
+     tree11 = tree11 - 0.18;
+           if (tree11 < -30)
+        {
+        tree11 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///tree-12
+    glTranslatef(+16.5,20,0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree12+0 );
+    glVertex2f(-8.5, tree12-1 );
+    glVertex2f(-7.5, tree12-1);
+
+
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree12+0.15 );
+    glVertex2f(-8.5, tree12-0.65 );
+    glVertex2f(-7.5, tree12-0.65);
+    glEnd();
+
+    glLineWidth(10);
+    glBegin(GL_LINES);
+    glColor3f(0.5,1.0,0.0);
+    glVertex2f(-8, tree12-0.5 );
+    glVertex2f(-8, tree12-1.8 );
+    glEnd();
+
+
+     tree12 = tree12 - 0.18;
+           if (tree12 < -30)
+        {
+        tree12 = 9;
+
+       }
+    glLoadIdentity();
+
+    ///box-1
+    glTranslatef(-8,0,0);
+        glPointSize(30);
+        glBegin(GL_POINTS);
+            glColor3f(0.470, 0.305, 0.231);
+            glVertex2f(0,box1+0);
+        glEnd();
+
+
+    box1 = box1 - 0.18;
+           if (box1 < -30)
+        {
+        box1 = 9;
+
+       }
+     glLoadIdentity();
+
+     ///box-2
+    glTranslatef(-9,15,0);
+        glPointSize(30);
+        glBegin(GL_POINTS);
+            glColor3f(0.470, 0.305, 0.231);
+            glVertex2f(0,box2+0);
+        glEnd();
+
+
+    box2 = box2 - 0.18;
+           if (box2 < -30)
+        {
+        box2 = 9;
+
+       }
+     glLoadIdentity();
+
+     ///box-3
+    glTranslatef(+8,25,0);
+        glPointSize(30);
+        glBegin(GL_POINTS);
+            glColor3f(0.470, 0.305, 0.231);
+            glVertex2f(0,box3+0);
+        glEnd();
+
+
+    box3 = box3 - 0.18;
+           if (box3 < -40)
+        {
+        box3 = 9;
+
+       }
+     glLoadIdentity();
+
+    ///Score Board
+    glBegin(GL_POLYGON);
+     glColor3f(0.0, 0.3, 0.1);
+
+    glVertex2f(7, 8.6);
+    glVertex2f(7, 5.6);
+    glVertex2f(9.8, 5.6 );
+
+    glVertex2f(9.8, 8.6);
+
+    glEnd();
+     glLoadIdentity();
+
     glutSwapBuffers();
 }
 void reshape(int w,int h)
@@ -432,7 +902,7 @@ void car_key(int key, int x, int y)
     }
 }
 
-int start=0;
+
 
 void introduction()
 {
@@ -504,3 +974,5 @@ int main (int argc, char**argv)
     glutMainLoop();
 
 }
+
+
