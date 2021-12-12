@@ -906,15 +906,103 @@ void car_key(int key, int x, int y)
 
 void introduction()
 {
-    glClear(GL_COLOR_BUFFER_BIT);
     glLineWidth(50);
+    glBegin(GL_QUADS);
+        glColor3f(0,0,0);
+        glVertex2f(-10,-15);
+        glVertex2f(-10,10);
+        glVertex2f(12,10);
+        glVertex2f(12,-15);
+    glEnd();
+
+    glLineWidth(15);
     glBegin(GL_LINES);
         glColor3f(1,0,0);
-        glVertex2f(0,0);
-        glVertex2f(0,5);
+
+        //c
+        glVertex2f(-4,4);
+        glVertex2f(-4,7);
+
+        glVertex2f(-2.5,7);
+        glVertex2f(-4,7);
+
+        glVertex2f(-2.5,4);
+        glVertex2f(-4,4);
+
+        //G
+        glVertex2f(-0.5,4);
+        glVertex2f(-0.5,7);
+
+        glVertex2f(1,7);
+        glVertex2f(-0.5,7);
+
+        glVertex2f(1,4);
+        glVertex2f(-0.5,4);
+
+        glVertex2f(1,4);
+        glVertex2f(1,5);
+
+        //R
+        glVertex2f(-4,1);
+        glVertex2f(-4,-2);
+
+        glVertex2f(-2.5,1);
+        glVertex2f(-4,1);
+
+        glVertex2f(-2.5,1);
+        glVertex2f(-2.5,-0.5);
+
+        glVertex2f(-2.5,-0.5);
+        glVertex2f(-4,-0.5);
+
+        glVertex2f(-4,-0.5);
+        glVertex2f(-2.5,-2);
+
+        //A
+        glVertex2f(-0.5,1);
+        glVertex2f(-0.5,-2);
+
+        glVertex2f(1,1);
+        glVertex2f(-0.5,1);
+
+        glVertex2f(1,1);
+        glVertex2f(1,-2);
+
+        glVertex2f(1,-0.5);
+        glVertex2f(-0.5,-0.5);
+
+        //c
+        glVertex2f(2.5,1);
+        glVertex2f(2.5,-2);
+
+        glVertex2f(4,-2);
+        glVertex2f(2.5,-2);
+
+        glVertex2f(4,1);
+        glVertex2f(2.5,1);
+
+        //E
+
+        glVertex2f(5.5,1);
+        glVertex2f(5.5,-2);
+
+        glVertex2f(7,-2);
+        glVertex2f(5.5,-2);
+
+        glVertex2f(7,1);
+        glVertex2f(5.5,1);
+
+        glVertex2f(6.5,-0.5);
+        glVertex2f(5.5,-0.5);
+
+
     glEnd();
+
     glLoadIdentity();
+
+
     glFlush();
+    glutSwapBuffers();
 }
 
 void game_key(unsigned char key, int x, int y)
